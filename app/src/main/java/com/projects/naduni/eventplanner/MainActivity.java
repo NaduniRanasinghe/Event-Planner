@@ -89,6 +89,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_events) {
 
         } else if (id == R.id.nav_guests) {
+            ft.replace(R.id.content_frame, new ShoppingList());
+            ft.commit();
 
 
         } else if (id == R.id.nav_todo) {
