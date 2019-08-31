@@ -3,6 +3,7 @@ package com.projects.naduni.eventplanner;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -77,14 +78,23 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            ft.replace(R.id.content_frame, new TodoListAdd());
+            ft.commit();
         } else if (id == R.id.nav_gallery) {
+            ft.replace(R.id.content_frame, new TodoListView());
+            ft.commit();
 
         } else if (id == R.id.nav_slideshow) {
+            ft.replace(R.id.content_frame, new EventView());
+            ft.commit();
+
 
         } else if (id == R.id.nav_manage) {
 
