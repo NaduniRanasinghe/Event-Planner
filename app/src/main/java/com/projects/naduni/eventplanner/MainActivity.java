@@ -93,6 +93,8 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_todo) {
 
+            ft.replace(R.id.content_frame, new TodoListAdd());
+            ft.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
