@@ -27,6 +27,7 @@ public class TodoListAdd extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        getActivity().setTitle("To-Do List");
         View view = inflater.inflate(R.layout.todolist_add, container, false);
         addTodos = (EditText)view.findViewById(R.id.addtodos);
         addNotes = (EditText)view.findViewById(R.id.addnotes);
@@ -46,5 +47,6 @@ public class TodoListAdd extends Fragment {
             }});
         return view;
     }
+
 
 }

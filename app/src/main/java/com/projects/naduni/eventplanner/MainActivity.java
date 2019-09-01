@@ -24,14 +24,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -75,6 +67,7 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -88,12 +81,14 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_events) {
 
-        } else if (id == R.id.nav_guests) {
 
+        } else if (id == R.id.nav_guests) {
+            ft.replace(R.id.content_frame, new EventView());
+            ft.commit();
 
         } else if (id == R.id.nav_todo) {
 
-            ft.replace(R.id.content_frame, new TodoListAdd());
+            ft.replace(R.id.content_frame, new TodoListView());
             ft.commit();
         }
 
