@@ -92,6 +92,11 @@ public class MainActivity extends AppCompatActivity
             ft.replace(R.id.content_frame, new TodoListView());
             ft.commit();
         }
+        else if (id == R.id.nav_shopping) {
+
+            ft.replace(R.id.content_frame, new ShoppingList());
+            ft.commit();
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

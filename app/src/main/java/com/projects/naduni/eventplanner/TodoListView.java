@@ -36,20 +36,6 @@ public class TodoListView extends Fragment {
                 ft.replace(R.id.content_frame, new TodoListAdd());
                 ft.commit();
 
-
-//                    Cursor res = mydb.viewAllData();
-//                    if(res.getCount() == 0){
-//                        showMessage("Error","Nothing Found");
-//                        return;
-//                    }
-//                    StringBuffer buffer = new StringBuffer();
-//                    while (res.moveToNext()){
-//
-//                        buffer.append("ID :"+res.getString(0)+"\n");
-//                        buffer.append("Task :"+res.getString(1)+"\n");
-//                        buffer.append("Note :"+res.getString(2)+"\n");
-//                    }
-//                    showMessage("Data ",buffer.toString());
             }});
         return view;
     }
