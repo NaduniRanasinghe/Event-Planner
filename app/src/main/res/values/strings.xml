@@ -6,6 +6,28 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <string name="country_prompt">My Event</string>
+    <string-array name="country_arrays">
+        <item>First Event</item>
+        <item>Second Event</item>
+        <item>Third Event</item>
+    </string-array>
+    <string name="age_prompt">Select Age</string>
+    <string-array name="age_arrays">
+        <item>All</item>
+        <item>Children</item>
+        <item>Teenagers</item>
+        <item>Adults</item>
+        <item>Seniors</item>
+    </string-array>
+    <string name="gender_prompt">Select Gender</string>
+    <string-array name="gender_arrays">
+        <item>All</item>
+        <item>Males</item>
+        <item>Females</item>
+    </string-array>
+
     <string name="guest_status">Status</string>
     <string name="Event">Event</string>
     <string name="status_prompt">Status</string>

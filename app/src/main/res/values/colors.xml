@@ -9,8 +9,10 @@
 
 
     <color name="colorPrimary">#DC7633</color>
+
     <color name="colorPrimaryDark">#eea834</color>
     <color name="colorAccent">#F5B041</color>
     <color name="colorBackground">#f8d261</color>
+
 
 </resources>

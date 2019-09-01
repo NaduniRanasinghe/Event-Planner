@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <Button
-        android:id="@+id/todolistviewbutton"
+        android:id="@+id/addTodoListbutton"
         android:layout_width="196dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -22,10 +22,18 @@
         android:text="ADD NEW TASK"
         android:background="@drawable/rounded_border_edittext"/>
 
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="2dp">
+        android:layout_marginTop="10dp">
         <TextView
             android:id="@+id/tvUpdateDeleteTitle"
             android:layout_width="wrap_content"
@@ -55,97 +63,8 @@
             android:layout_marginRight="5dp"/>
     </RelativeLayout>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp">
-        <TextView
-            android:id="@+id/tvUpdateDeleteTitle2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:gravity="center"
-            android:paddingLeft="20dp"
-            android:paddingTop="15dp"
-            android:textSize="18dp"
-            android:textColor="@color/colorBlack"
-            android:text="pasan kamburugamuwa" />
 
-        <ImageButton
-            android:id="@+id/ibDeleteCustomer2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:src="@android:drawable/ic_delete" />
 
-        <ImageButton
-            android:id="@+id/ibUpdateCustomer2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/ibDeleteCustomer2"
-            android:src="@android:drawable/ic_menu_edit"
-            android:layout_marginRight="5dp"/>
-    </RelativeLayout>
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp">
-        <TextView
-            android:id="@+id/tvUpdateDeleteTitle3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:gravity="center"
-            android:paddingLeft="20dp"
-            android:paddingTop="15dp"
-            android:textSize="18dp"
-            android:textColor="@color/colorBlack"
-            android:text="pasan kamburugamuwa" />
-
-        <ImageButton
-            android:id="@+id/ibDeleteCustomer3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:src="@android:drawable/ic_delete" />
-
-        <ImageButton
-            android:id="@+id/ibUpdateCustomer3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/ibDeleteCustomer3"
-            android:src="@android:drawable/ic_menu_edit" />
-    </RelativeLayout>
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="30dp">
-        <TextView
-            android:id="@+id/tvUpdateDeleteTitle4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:gravity="center"
-            android:paddingLeft="20dp"
-            android:paddingTop="15dp"
-            android:textSize="18dp"
-            android:textColor="@color/colorBlack"
-            android:text="pasan kamburugamuwa" />
-
-        <ImageButton
-            android:id="@+id/ibDeleteCustomer4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:src="@android:drawable/ic_delete" />
-
-        <ImageButton
-            android:id="@+id/ibUpdateCustomer4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/ibDeleteCustomer4"
-            android:src="@android:drawable/ic_menu_edit" />
-    </RelativeLayout>
+    </ScrollView>
 
 </LinearLayout>
