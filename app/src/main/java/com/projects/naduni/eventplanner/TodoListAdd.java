@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.projects.naduni.eventplanner.Service.DatabaseHelper;
 
-
 public class TodoListAdd extends Fragment {
 
     EditText addTodos,addNotes;
@@ -33,17 +32,14 @@ public class TodoListAdd extends Fragment {
         addNotes = (EditText)view.findViewById(R.id.addnotes);
         button = (Button) view.findViewById(R.id.todolistbutton);
         myDb = new DatabaseHelper(getActivity());
-
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
                 if(myDb.insertData(addTodos.getText().toString(),addNotes.getText().toString())){
                     Toast.makeText(getActivity(),addTodos.getText().toString() +addNotes.getText().toString() , Toast.LENGTH_LONG ).show();
                 }
                 else{
                     Toast.makeText(getActivity(), "Not added an item ", Toast.LENGTH_LONG ).show();
                 }
-
             }});
         return view;
     }

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="false">
+
+
+    <TextView
+        android:id="@+id/totalView"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/statusview"
+        android:layout_alignLeft="@+id/statusview"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="263dp"
+        android:layout_marginLeft="263dp"
+        android:layout_marginBottom="29dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Total"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        tools:text="Total" />
+
+    <TextView
+        android:id="@+id/maleView"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/statusview"
+        android:layout_alignLeft="@+id/statusview"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="148dp"
+        android:layout_marginLeft="148dp"
+        android:layout_marginBottom="29dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Male"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        tools:text="Male" />
+
+    <TextView
+        android:id="@+id/femaleView"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/statusview"
+        android:layout_alignLeft="@+id/statusview"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="29dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Female"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        tools:text="Female" />
+
+    <TextView
+        android:id="@+id/eventview"
+        android:layout_width="70dp"
+        android:layout_height="33dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="198dp"
+        android:layout_marginLeft="198dp"
+        android:layout_marginTop="72dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/Event"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/statusview"
+        android:layout_width="70dp"
+        android:layout_height="33dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="74dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/guest_status"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        tools:text="@string/guest_status" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventview"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="276dp"
+        android:layout_marginLeft="276dp"
+        android:layout_marginTop="-30dp"
+        android:entries="@array/event_array"
+        android:prompt="@string/event_prompt" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="107dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eventview"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="-26dp"
+        android:entries="@array/status_array"
+        android:prompt="@string/status_prompt" />
+
+    <include
+        layout="@layout/guests"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/statusview"
+        android:layout_alignLeft="@+id/statusview"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-11dp"
+        android:layout_marginLeft="-11dp"
+        android:layout_marginTop="0dp" />
+
+    <Button
+        android:id="@+id/guestadd"
+        android:layout_width="45dp"
+        android:layout_height="23dp"
+        android:layout_alignStart="@+id/totalView"
+        android:layout_alignLeft="@+id/totalView"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="8dp"
+        android:background="#FFD700"
+        android:onClick="add_guest"
+        android:text="Add" />
+
+
+</RelativeLayout>
