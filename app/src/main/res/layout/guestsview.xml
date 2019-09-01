@@ -31,14 +31,14 @@
         android:layout_alignStart="@+id/statusview"
         android:layout_alignLeft="@+id/statusview"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="148dp"
-        android:layout_marginLeft="148dp"
+        android:layout_marginStart="143dp"
+        android:layout_marginLeft="143dp"
         android:layout_marginBottom="29dp"
         android:background="@color/colorPrimaryDark"
         android:text="Male"
+        android:textAlignment="center"
         android:textColor="@color/colorBlack"
         android:textStyle="bold"
-        android:textAlignment="center"
         tools:text="Male" />
 
     <TextView
@@ -48,15 +48,66 @@
         android:layout_alignStart="@+id/statusview"
         android:layout_alignLeft="@+id/statusview"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="29dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="27dp"
         android:background="@color/colorPrimaryDark"
         android:text="Female"
+        android:textAlignment="center"
         android:textColor="@color/colorBlack"
         android:textStyle="bold"
-        android:textAlignment="center"
         tools:text="Female" />
+
+    <TextView
+        android:id="@+id/femaleCount"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/statusview"
+        android:layout_alignLeft="@+id/statusview"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="211dp"
+        android:layout_marginLeft="211dp"
+        android:layout_marginBottom="29dp"
+        android:background="@android:color/holo_red_light"
+        android:text="Female"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        tools:text="12" />
+
+    <TextView
+        android:id="@+id/maleCount"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/statusview"
+        android:layout_alignLeft="@+id/statusview"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginBottom="27dp"
+        android:background="@android:color/holo_red_light"
+        android:text="Female"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/totalCount"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/statusview"
+        android:layout_alignLeft="@+id/statusview"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="327dp"
+        android:layout_marginLeft="327dp"
+        android:layout_marginBottom="29dp"
+        android:background="@android:color/holo_red_light"
+        android:text="Female"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        tools:text="27" />
 
     <TextView
         android:id="@+id/eventview"
@@ -143,6 +194,18 @@
         android:background="#FFD700"
         android:onClick="add_guest"
         android:text="Add" />
+
+    <ListView
+        android:id="@+id/guestList"
+        android:layout_width="337dp"
+        android:layout_height="361dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="121dp"
+       />
 
 
 </RelativeLayout>
