@@ -4,29 +4,674 @@
     android:layout_height="match_parent">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="60dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="SELECT EVENT"
+            android:textColor="#000000"
+            android:textSize="20dp"></TextView>
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:dropDownWidth="140dp"
+            android:entries="@array/country_arrays"
+            android:prompt="@string/country_prompt" />
+    </LinearLayout>
+
+
+
+    <TableRow
+        android:id="@+id/hr2"
+        android:layout_width="360dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:layout_height="1dp"
+        android:layout_marginTop="100dp"
+        android:background="#444"></TableRow>
 
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="107dp"
-        android:layout_height="41dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginLeft="39dp"
-        android:layout_marginTop="86dp"
-        android:layout_marginEnd="265dp"
-        android:layout_marginRight="265dp"
-        android:layout_marginBottom="603dp"
-        android:text="TASK"
-        android:textColor="@color/colorBlack"
-        android:textSize="18dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="110dp"
+        android:text="Completed Tasks"
+        android:textColor="#000000"
+        android:textSize="20dp"></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="160dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="1/3"
+            android:textColor="#000000"
+            android:textSize="20dp"></TextView>
+
+        <ProgressBar
+            android:id="@+id/determinateBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:progress="25"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="40dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="205dp"
+        android:text="Budget"
+        android:textColor="#000000"
+        android:textSize="20dp"></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="245dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="Total :"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:text="00.00"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Paid :"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:text="00.00"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Due to Pay : "
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:text="00.00"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+    </LinearLayout>
+
+    <TableRow
+        android:id="@+id/hr4"
+        android:layout_width="300dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:layout_height="1dp"
+        android:layout_marginTop="280dp"
+        android:background="#444"></TableRow>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="290dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Age :"
+            android:textColor="#000000"
+            android:textSize="20dp"></TextView>
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:dropDownWidth="140dp"
+            android:entries="@array/age_arrays"
+            android:prompt="@string/age_prompt" />
+    </LinearLayout>
 
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="330dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Group"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Total"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Invited"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Invited"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="RSVP"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Attending"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Declined"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="350dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="All"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="370dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Females"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="385dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Males"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+    </LinearLayout>
+
+    <TableRow
+        android:id="@+id/hr3"
+        android:layout_width="300dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:layout_height="1dp"
+        android:layout_marginTop="435dp"
+        android:background="#444"></TableRow>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="450dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Gender"
+            android:textColor="#000000"
+            android:textSize="20dp"></TextView>
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:dropDownWidth="140dp"
+            android:entries="@array/age_arrays"
+            android:prompt="@string/age_prompt" />
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="490dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Group"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Total"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Invited"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Invited"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="RSVP"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Attending"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Declined"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="515dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="All"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="540dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Females"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="570dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Males"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+    </LinearLayout>
 
 </RelativeLayout>
 
