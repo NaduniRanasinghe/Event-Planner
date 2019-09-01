@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
 
         } else if (id == R.id.nav_events) {
             ft.replace(R.id.content_frame, new ShoppingList());
