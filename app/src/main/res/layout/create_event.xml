@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background = "#825E12">
+    android:background = "#FFFFFF">
 
     <TextView
         android:id="@+id/textView2"
@@ -15,7 +15,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="1dp"
         android:text="Event Name"
-        android:textColor="@android:color/background_light"
+        android:textColor="@color/colorAccent"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,7 +68,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Location"
-        android:textColor="@color/colorwhite"
+        android:textColor="@color/colorAccent"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -87,7 +87,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Date"
-        android:textColor="@color/colorwhite"
+        android:textColor="@color/colorAccent"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -105,7 +105,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:background = "#825E12"
+        android:background="#FFFFFF"
         android:drawableTop="@drawable/ic_date_button"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,7 +124,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Note"
-        android:textColor="@color/colorwhite"
+        android:textColor="@color/colorAccent"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -170,5 +170,27 @@
         app:layout_constraintVertical_bias="0.468"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="29dp" />
+
+    <Button
+        android:id="@+id/guestAddBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/side_nav_bar"
+        android:text="ADD"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.966" />
 
 </android.support.constraint.ConstraintLayout>
