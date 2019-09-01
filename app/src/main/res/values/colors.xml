@@ -5,12 +5,15 @@
 
     <color name="colorBlack">#000000</color>
     <color name="colordarkgreen">	#006400</color>
-    <color name="colorwhite">#fff</color>
+    <color name="colorwhite">#ffffff</color>
 
 
     <color name="colorPrimary">#DC7633</color>
-    <color name="colorPrimaryDark">#DC7633</color>
-    <color name="colorAccent">#DC7633</color>
+
+    <color name="colorPrimaryDark">#eea834</color>
+    <color name="colorAccent">#000000</color>
+    <!--<color name="colorAccent">#F5B041</color>-->
+    <color name="colorBackground">#f8d261</color>
 
 
 </resources>

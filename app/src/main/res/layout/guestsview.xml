@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/colorBackground"
     android:clickable="false">
 
 
@@ -29,30 +30,85 @@
         android:layout_alignStart="@+id/statusview"
         android:layout_alignLeft="@+id/statusview"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="148dp"
-        android:layout_marginLeft="148dp"
+        android:layout_marginStart="143dp"
+        android:layout_marginLeft="143dp"
         android:layout_marginBottom="29dp"
         android:background="@color/colorPrimaryDark"
         android:text="Male"
+        android:textAlignment="center"
         android:textColor="@color/colorBlack"
         android:textStyle="bold"
-        android:textAlignment="center"
         tools:text="Male" />
 
     <TextView
         android:id="@+id/femaleView"
         android:layout_width="60dp"
         android:layout_height="30dp"
-        android:layout_alignBaseline="@+id/maleView"
-        android:layout_alignBottom="@+id/maleView"
-        android:layout_alignEnd="@+id/statusview"
-        android:layout_alignRight="@+id/statusview"
+
+        android:layout_alignStart="@+id/statusview"
+        android:layout_alignLeft="@+id/statusview"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="27dp"
+
         android:background="@color/colorPrimaryDark"
         android:text="Female"
         android:textAlignment="center"
         android:textColor="@color/colorBlack"
         android:textStyle="bold"
         tools:text="Female" />
+
+    <TextView
+        android:id="@+id/femaleCount"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/statusview"
+        android:layout_alignLeft="@+id/statusview"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="211dp"
+        android:layout_marginLeft="211dp"
+        android:layout_marginBottom="29dp"
+        android:background="#70E57E"
+        android:text="12"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        tools:text="12" />
+
+    <TextView
+        android:id="@+id/maleCount"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/statusview"
+        android:layout_alignLeft="@+id/statusview"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginBottom="27dp"
+        android:background="#70E57E"
+        android:text="10"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/totalCount"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/statusview"
+        android:layout_alignLeft="@+id/statusview"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="327dp"
+        android:layout_marginLeft="327dp"
+        android:layout_marginBottom="29dp"
+        android:background="#70E57E"
+        android:text="27"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        tools:text="27" />
 
     <TextView
         android:id="@+id/eventview"
@@ -66,9 +122,9 @@
         android:layout_marginTop="72dp"
         android:background="@color/colorPrimaryDark"
         android:text="@string/Event"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="18sp"
-        android:textAlignment="center"
         android:textStyle="bold" />
 
     <TextView
@@ -83,10 +139,10 @@
         android:layout_marginTop="74dp"
         android:background="@color/colorPrimaryDark"
         android:text="@string/guest_status"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textAlignment="center"
         tools:text="@string/guest_status" />
 
     <Spinner
@@ -115,13 +171,6 @@
         android:entries="@array/status_array"
         android:prompt="@string/status_prompt" />
 
-    <include
-        layout="@layout/guests"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
 
     <Button
         android:id="@+id/guestadd"
@@ -129,13 +178,68 @@
         android:layout_height="23dp"
         android:layout_alignStart="@+id/totalView"
         android:layout_alignLeft="@+id/totalView"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="8dp"
+        android:layout_alignTop="@+id/guestSearch"
+        android:layout_marginStart="53dp"
+        android:layout_marginLeft="53dp"
         android:background="#FFD700"
-        android:onClick="add_guest"
         android:text="Add" />
+
+    <Button
+        android:id="@+id/guestSearch"
+        android:layout_width="45dp"
+        android:layout_height="23dp"
+        android:layout_alignStart="@+id/totalView"
+        android:layout_alignLeft="@+id/totalView"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginTop="13dp"
+        android:background="#FFD700"
+        android:text="Search"
+        android:textSize="10sp" />
+
+    <LinearLayout
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/maleView"
+        android:layout_alignLeft="@+id/maleView"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-132dp"
+        android:layout_marginLeft="-132dp"
+        android:layout_marginTop="136dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Naduni"
+            android:textColor="#000000"
+            android:textSize="18dp" />
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_email"
+            tools:ignore="VectorDrawableCompat" />
+
+
+    </LinearLayout>
+
+    <SearchView
+        android:layout_width="224dp"
+        android:layout_height="27dp"
+        android:layout_alignTop="@+id/guestadd"
+        android:layout_alignEnd="@+id/maleView"
+        android:layout_alignRight="@+id/maleView"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="-43dp"
+        android:layout_marginRight="-43dp"
+        android:background="@color/colorBackground" />
 
 
 </RelativeLayout>
