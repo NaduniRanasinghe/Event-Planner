@@ -1,38 +1,60 @@
 package com.projects.naduni.eventplanner;
 
-import android.app.AlertDialog;
-import android.database.Cursor;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.projects.naduni.eventplanner.Service.DatabaseHelper;
+
+
+import static com.projects.naduni.eventplanner.R.*;
+import static com.projects.naduni.eventplanner.R.layout.guestsview;
+
 
 public class GuestsView extends Fragment {
 
 
 
-//    Button btn_viewTodos;
-//    DatabaseHelper mydb;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.guestsview, container, false);
+        View view = inflater.inflate(guestsview, container, false);
+
+
+        getActivity().setTitle("Guests");
+
+        Button guestAdd = (Button)view.findViewById(id.guestadd);
+
+
+        guestAdd.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                ft.replace(R.id.content_frame, new AddGuest());
+                ft.commit();
+
+
+            }});
+//        final Button creat_event_button = (Button) view.findViewById(id.guestadd);
+//        creat_event_button.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity(), AddGuest.class);
+//                GuestsView.this.startActivity(intent);
+//            }
+//        });
 
         return view;
+
+
     }
 
-//    public void showMessage(String title, String message){
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this.getContext());
-//        builder.setCancelable(true);
-//        builder.setTitle(title);
-//        builder.setMessage(message);
-//        builder.show();
-//
-//    }
+
 }
 
 

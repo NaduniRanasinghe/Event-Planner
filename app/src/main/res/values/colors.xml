@@ -9,7 +9,11 @@
 
 
     <color name="colorPrimary">#DC7633</color>
-    <color name="colorPrimaryDark">#dbeea834</color>
-    <color name="colorAccent">#f5b041</color>
+
+    <color name="colorPrimaryDark">#eea834</color>
+    <color name="colorAccent">#000000</color>
+    <!--<color name="colorAccent">#F5B041</color>-->
+    <color name="colorBackground">#f8d261</color>
+
 
 </resources>
