@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ShoppingListAdd"></activity>
+        <activity android:name=".CreateEvent" />
     </application>
 
 </manifest>

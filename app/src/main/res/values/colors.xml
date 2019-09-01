@@ -3,13 +3,13 @@
 
 
 
-    <color name="colorBlack">#000000</color>
+    <color name="colorBlack">#ffffff</color>
     <color name="colordarkgreen">	#006400</color>
-    <color name="colorwhite">#fff</color>
+    <color name="colorwhite">#ffffff</color>
 
 
     <color name="colorPrimary">#DC7633</color>
-    <color name="colorPrimaryDark">#eea834</color>
-    <color name="colorAccent">#F5B041</color>
+    <color name="colorPrimaryDark">#dbeea834</color>
+    <color name="colorAccent">#f5b041</color>
 
 </resources>
