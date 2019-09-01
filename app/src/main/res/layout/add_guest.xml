@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground">
+    android:backgroundTint="@color/colorBackground">
 
 
     <TextView
@@ -12,12 +13,15 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="62dp"
-        android:layout_marginLeft="62dp"
-        android:layout_marginTop="163dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="117dp"
         android:layout_weight="1"
-        android:background="@color/colorPrimaryDark"
-        android:text="Name" />
+        android:text="Name"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="serif" />
 
     <TextView
         android:id="@+id/genderTextView"
@@ -26,10 +30,14 @@
         android:layout_alignEnd="@+id/nameTextView"
         android:layout_alignRight="@+id/nameTextView"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="216dp"
-        android:layout_marginEnd="-8dp"
-        android:layout_marginRight="-8dp"
-        android:text="Gender" />
+        android:layout_marginTop="178dp"
+        android:layout_marginEnd="-15dp"
+        android:layout_marginRight="-15dp"
+        android:text="Gender"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="serif" />
 
     <TextView
         android:id="@+id/ageTextView"
@@ -38,10 +46,14 @@
         android:layout_alignEnd="@+id/nameTextView"
         android:layout_alignRight="@+id/nameTextView"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="277dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
-        android:text="Age" />
+        android:layout_marginTop="230dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+        android:text="Age"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="serif" />
 
     <TextView
         android:id="@+id/textView13"
@@ -52,8 +64,12 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginBottom="233dp"
-        android:text="Email" />
+        android:layout_marginBottom="266dp"
+        android:text="Email"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="serif" />
 
     <TextView
         android:id="@+id/notesTextView"
@@ -64,8 +80,12 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginBottom="181dp"
-        android:text="Notes" />
+        android:layout_marginBottom="207dp"
+        android:text="Notes"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="serif" />
 
     <Button
         android:id="@+id/guestAddBtn"
@@ -74,23 +94,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="152dp"
-        android:layout_marginLeft="152dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginBottom="69dp"
         android:background="@drawable/side_nav_bar"
         android:text="ADD"
-        android:textColor="@color/colorBlack" />
-
-    <include
-        layout="@layout/guests"
-        android:layout_width="match_parent"
-        android:layout_height="74dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp" />
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/EventTextView"
@@ -99,38 +110,40 @@
         android:layout_alignStart="@+id/nameTextView"
         android:layout_alignLeft="@+id/nameTextView"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="98dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="46dp"
         android:text="Event"
+        android:textAlignment="center"
         android:textColor="@color/colorBlack"
-        android:textStyle="bold" />
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="serif" />
 
     <Spinner
         android:id="@+id/spinner3"
-        android:layout_width="130dp"
-        android:layout_height="41dp"
+        android:layout_width="170dp"
+        android:layout_height="39dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="203dp"
-        android:layout_marginLeft="203dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginStart="189dp"
+        android:layout_marginLeft="189dp"
+        android:layout_marginTop="41dp"
         android:entries="@array/event_array" />
 
     <EditText
         android:id="@+id/guestName"
-        android:layout_width="204dp"
-        android:layout_height="34dp"
+        android:layout_width="205dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="152dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginTop="102dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:inputType="textPersonName" />
 
     <Spinner
         android:id="@+id/guestGender"
@@ -138,26 +151,36 @@
         android:layout_height="36dp"
         android:layout_alignTop="@+id/genderTextView"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="147dp"
-        android:layout_marginTop="1dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="142dp"
+        android:layout_marginLeft="142dp"
+        android:layout_marginTop="-19dp"
+        android:entries="@array/gender_array"
+        android:prompt="@string/gender_prompt" />
 
     <EditText
         android:id="@+id/guestAge"
-        android:layout_width="135dp"
-        android:layout_height="34dp"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/textView13"
         android:layout_alignEnd="@+id/guestName"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="15dp"
+        android:layout_alignRight="@+id/guestName"
+        android:layout_marginEnd="67dp"
+        android:layout_marginRight="67dp"
+        android:layout_marginBottom="17dp"
         android:ems="10"
         android:inputType="number" />
 
     <EditText
         android:id="@+id/gestEmail"
-        android:layout_width="204dp"
-        android:layout_height="33dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignStart="@+id/guestName"
+        android:layout_alignLeft="@+id/guestName"
         android:layout_alignTop="@+id/textView13"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="-8dp"
         android:ems="10"
         android:inputType="textEmailAddress" />
 
@@ -166,8 +189,11 @@
         android:layout_width="wrap_content"
         android:layout_height="84dp"
         android:layout_alignStart="@+id/guestGender"
+        android:layout_alignLeft="@+id/guestGender"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="121dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="151dp"
         android:ems="10"
         android:inputType="textMultiLine" />
 
