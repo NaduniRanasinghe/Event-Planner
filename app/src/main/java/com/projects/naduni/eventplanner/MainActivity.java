@@ -83,13 +83,11 @@ public class MainActivity extends AppCompatActivity
             ft.commit();
 
         } else if (id == R.id.nav_todo) {
-
             ft.replace(R.id.content_frame, new TodoListView());
             ft.commit();
         }
         else if (id == R.id.nav_shopping) {
-
-            ft.replace(R.id.content_frame, new ShoppingList());
+            ft.replace(R.id.content_frame, new ShoppingListView());
             ft.commit();
         }
 
