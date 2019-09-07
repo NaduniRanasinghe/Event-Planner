@@ -59,4 +59,7 @@
     <string name="guest_email">Email</string>
     <string name="notes">Notes</string>
     <string name="add_guest">Add</string>
+    <string name="guest1">Naduni</string>
+    <string name="search_button">Search</string>
+    <string name="status">Status</string>
 </resources>

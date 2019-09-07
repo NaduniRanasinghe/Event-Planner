@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
+import android.widget.ImageButton;
 
 
 import static com.projects.naduni.eventplanner.R.*;
@@ -29,7 +29,7 @@ public class GuestsView extends Fragment {
 
         getActivity().setTitle("Guests");
 
-        Button guestAdd = (Button)view.findViewById(id.guestadd);
+        ImageButton guestAdd = (ImageButton)view.findViewById(id.guestadd);
 
 
         guestAdd.setOnClickListener(new View.OnClickListener() {
