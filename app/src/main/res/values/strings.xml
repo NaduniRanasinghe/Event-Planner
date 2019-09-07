@@ -52,4 +52,11 @@
         <item>Female</item>
         <item>Male</item>
     </string-array>
+    <string name="event_name">Event</string>
+    <string name="guest_name">Name</string>
+    <string name="guest_gender">Gender</string>
+    <string name="guest_age">Age</string>
+    <string name="guest_email">Email</string>
+    <string name="notes">Notes</string>
+    <string name="add_guest">Add</string>
 </resources>
