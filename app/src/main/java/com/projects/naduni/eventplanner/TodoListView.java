@@ -36,7 +36,6 @@ public class TodoListView extends Fragment {
                 ft.replace(R.id.content_frame, new TodoListAdd());
                 ft.commit();
 
-
             }});
         return view;
     }

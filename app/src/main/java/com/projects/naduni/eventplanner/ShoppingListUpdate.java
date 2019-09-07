@@ -1,17 +1,18 @@
 package com.projects.naduni.eventplanner;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class ShoppingListAdd extends Fragment {
-    
+public class ShoppingListUpdate extends Fragment {
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
@@ -23,8 +24,7 @@ public class ShoppingListAdd extends Fragment {
                              Bundle savedInstanceState) {
         getActivity().setTitle("Shopping-List-Edit");
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.activity_shopping_list_add, container, false);
-
+        View view = inflater.inflate(R.layout.activity_shopping_list_update, container, false);
 
         return view;
     }

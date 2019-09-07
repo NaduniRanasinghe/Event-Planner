@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/pic1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Shopping List"
+            android:textColor="#000000"
+            android:textSize="20dp"></TextView>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="105dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:text=""
+            android:background="@drawable/image5"/>
+
+        <Button
+            android:id="@+id/shopping_list_add"
+            android:layout_width="105dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:text="Add"
+            android:background="@drawable/pic5"/>
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/pic2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="SELECT EVENT"
+            android:textColor="#000000"
+            android:textSize="20dp"></TextView>
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:dropDownWidth="140dp"
+            android:entries="@array/country_arrays"
+            android:prompt="@string/country_prompt" />
+    </LinearLayout>
+
+
+
+    <TableRow
+        android:id="@+id/hr2"
+        android:layout_width="360dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:layout_height="1dp"
+        android:layout_marginTop="100dp"
+        android:background="#444"></TableRow>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/pic2">>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:text="Item"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="Total Cost"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Purchased"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Edit"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="Delete"
+            android:textColor="#000000"
+            android:textSize="10dp"></TextView>
+
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/pic2">>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Ribbon"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="2dp"
+            android:layout_marginLeft="60dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:text="" />
+
+        <Button
+            android:id="@+id/edit_item"
+            android:layout_width="3dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text=""
+            android:background="@drawable/edit1"/>
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="3dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/delete"
+            android:text="" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/pic2">>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Baloons"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <CheckBox
+            android:id="@+id/checkBox8"
+            android:layout_width="2dp"
+            android:layout_marginLeft="60dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:text="" />
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="3dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit1"
+            android:text="" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="3dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/delete"
+            android:text="" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="350dp"
+        android:background="@drawable/pic2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Candles"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="2dp"
+            android:layout_marginLeft="60dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:text="" />
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="3dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/edit1"
+            android:text="" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="3dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/delete"
+            android:text="" />
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="500dp"
+        android:background="@drawable/pic2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Total = 15000"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Cost = 2000"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Remaining = 13000"
+            android:textColor="#000000"
+            android:textSize="15dp"></TextView>
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
+

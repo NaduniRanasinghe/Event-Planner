@@ -12,12 +12,10 @@
         android:id="@+id/totalView"
         android:layout_width="60dp"
         android:layout_height="30dp"
-        android:layout_alignStart="@+id/statusview"
-        android:layout_alignLeft="@+id/statusview"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="263dp"
-        android:layout_marginLeft="263dp"
-        android:layout_marginBottom="29dp"
+        android:layout_alignBaseline="@+id/maleView"
+        android:layout_alignBottom="@+id/maleView"
+        android:layout_toEndOf="@+id/eventview"
+        android:layout_toRightOf="@+id/eventview"
         android:background="@color/colorPrimaryDark"
         android:text="Total"
         android:textAlignment="center"
@@ -46,12 +44,14 @@
         android:id="@+id/femaleView"
         android:layout_width="60dp"
         android:layout_height="30dp"
+
         android:layout_alignStart="@+id/statusview"
         android:layout_alignLeft="@+id/statusview"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginBottom="27dp"
+
         android:background="@color/colorPrimaryDark"
         android:text="Female"
         android:textAlignment="center"
@@ -170,6 +170,7 @@
         android:layout_marginTop="-26dp"
         android:entries="@array/status_array"
         android:prompt="@string/status_prompt" />
+
 
     <Button
         android:id="@+id/guestadd"
