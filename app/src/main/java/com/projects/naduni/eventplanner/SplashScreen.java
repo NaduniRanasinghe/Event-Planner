@@ -1,7 +1,9 @@
 package com.projects.naduni.eventplanner;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowInsets;
@@ -19,7 +21,12 @@ public class SplashScreen extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asplashscreen);
-        img= (ImageView)findViewById(R.id.imageView3);
+        img= (ImageView)findViewById(R.id.imageView2);
+        ConstraintLayout constraintLayout = findViewById(R.id.layout);
+        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(1000);
+        animationDrawable.setExitFadeDuration(2000);
+        animationDrawable.start();
 
         Animation myanim = AnimationUtils.loadAnimation(this,R.anim.splashscrenntransitions);
         img.startAnimation(myanim);

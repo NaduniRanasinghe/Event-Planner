@@ -30,14 +30,7 @@
             android:icon="@drawable/ic_menu_budget"
             android:title="Budget" />
     </group>
- <!--<group>-->
-     <!--<item-->
-         <!--android:id="@+id/nav_contactus"-->
-         <!--android:icon="@drawable/ic_menu_budget"-->
-         <!--android:title="Contact Us" />-->
 
-
- <!--</group>-->
 
 
 </menu>

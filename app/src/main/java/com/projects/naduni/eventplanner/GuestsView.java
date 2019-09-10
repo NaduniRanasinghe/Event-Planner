@@ -1,15 +1,16 @@
 package com.projects.naduni.eventplanner;
 
 
-import android.content.Intent;
+
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 
@@ -25,9 +26,12 @@ public class GuestsView extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(guestsview, container, false);
-
-
+        AnimationDrawable animationDrawable = (AnimationDrawable) view.getBackground();
+       animationDrawable.setEnterFadeDuration(2000);
+animationDrawable.setExitFadeDuration(4000);
+animationDrawable.start();
         getActivity().setTitle("Guests");
+
 
         ImageButton guestAdd = (ImageButton)view.findViewById(id.guestadd);
 
@@ -41,13 +45,6 @@ public class GuestsView extends Fragment {
 
 
             }});
-//        final Button creat_event_button = (Button) view.findViewById(id.guestadd);
-//        creat_event_button.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), AddGuest.class);
-//                GuestsView.this.startActivity(intent);
-//            }
-//        });
 
         return view;
 

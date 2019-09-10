@@ -8,12 +8,12 @@
     <color name="colorwhite">#ffffff</color>
 
 
-    <color name="colorPrimary">#DC7633</color>
+    <color name="colorPrimary">	#41004d</color>
 
-    <color name="colorPrimaryDark">#eea834</color>
+    <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#000000</color>
     <!--<color name="colorAccent">#F5B041</color>-->
-    <color name="colorBackground">#f8d261</color>
-
-
+    <color name="colorBackground">	#DDA0DD</color>
+    <color name="colorUIBG">	#BA55D3</color>
+    #BA55D3
 </resources>
