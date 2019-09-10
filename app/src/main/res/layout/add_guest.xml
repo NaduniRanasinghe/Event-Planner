@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground">
+    android:background="@color/colorwhite">
 
     <TextView
         android:id="@+id/name_textview"
@@ -15,6 +15,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="48dp"
         android:text="@string/event_name"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +44,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:text="@string/guest_name"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,6 +75,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:text="@string/guest_gender"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,6 +104,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:text="@string/guest_age"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -128,6 +132,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:text="@string/guest_email"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -155,6 +160,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:text="@string/notes"
+        android:textColor="@color/colorBlack"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -169,26 +175,31 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:ems="10"
-        android:inputType="textMultiLine"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
         app:layout_constraintBaseline_toBaselineOf="@+id/notes_textview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/notes_textview" />
 
     <Button
         android:id="@+id/add_guest_button"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="48dp"
+        android:background="@android:color/holo_orange_light"
         android:text="@string/add_guest"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText10" />
 
     <Spinner
         android:id="@+id/spinner3"
@@ -221,7 +232,6 @@
 
         android:ems="10"
         android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-         />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
