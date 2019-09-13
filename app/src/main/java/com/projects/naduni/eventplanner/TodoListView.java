@@ -10,13 +10,17 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.projects.naduni.eventplanner.Service.DatabaseHelper;
 
+import java.util.ArrayList;
+
 
 public class TodoListView extends Fragment {
-
 
     Button btn_viewTodos;
     DatabaseHelper mydb;
@@ -29,16 +33,16 @@ public class TodoListView extends Fragment {
         btn_viewTodos = (Button)view.findViewById(R.id.addTodoListbutton);
         mydb = new DatabaseHelper(getActivity());
 
+
         btn_viewTodos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction ft = fragmentManager.beginTransaction();
                 ft.replace(R.id.content_frame, new TodoListAdd());
                 ft.commit();
-
             }});
         return view;
-    }
+        }
 
     public void showMessage(String title, String message){
         AlertDialog.Builder builder = new AlertDialog.Builder(this.getContext());
@@ -48,4 +52,5 @@ public class TodoListView extends Fragment {
         builder.show();
 
     }
+
 }
