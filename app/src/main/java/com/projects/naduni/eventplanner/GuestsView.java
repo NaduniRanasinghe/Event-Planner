@@ -35,6 +35,7 @@ public class GuestsView extends Fragment  {
 
 
     private TextView txt_display;
+    TextView total_display,female_display,male_display;
     Spinner spinnerEvent;
     EditText deleteId;
     Button deletebtn, searchbtn;
@@ -50,6 +51,9 @@ public class GuestsView extends Fragment  {
        spinnerEvent = view.findViewById(id.spinner_event_view);
        guestSearch = view.findViewById(id.budgetSearch);
        searchbtn = view.findViewById(id.budget_search);
+       total_display = view.findViewById(R.id.total_display);
+        female_display = view.findViewById(R.id.female_display);
+        male_display = view.findViewById(id.male_display);
 
         final String guestName = guestSearch.toString();
         searchbtn.setOnClickListener(new View.OnClickListener() {
@@ -161,6 +165,9 @@ public class GuestsView extends Fragment  {
         Cursor cursor = mydb.getGuests(db);
 
         String info = " ";
+        int count =0;
+        int fcount = 0;
+        int mcount = 0;
 
         while(cursor.moveToNext())
         {
@@ -173,9 +180,23 @@ public class GuestsView extends Fragment  {
 
             info = info + "\n\n"+"ID : "+id +"\nName : "+ name + "\nAge : "+
                     age + "\nGender :" + gender+"\nStatus : "+status +"\nEmail : "+ email;
+
+           count = count + 1;
+
+           if(gender.equals("Female")){
+               fcount = fcount + 1;
+           }else if(gender.equals("Male")){
+               mcount = mcount + 1;
+           }
         }
 
         txt_display.setText(info);
+        String counts = Integer.toString(count);
+        String mcounts = Integer.toString(mcount);
+        String fcounts = Integer.toString(fcount);
+        total_display.setText(counts);
+        male_display.setText(mcounts);
+        female_display.setText(fcounts);
         mydb.close();
     }
 
@@ -186,7 +207,9 @@ public class GuestsView extends Fragment  {
 
         Cursor cursor = mydb.searchGuests(name,db);
 
+
         String info = " ";
+
 
         while(cursor.moveToNext())
         {
@@ -196,9 +219,18 @@ public class GuestsView extends Fragment  {
 
             info = info + "\n\n"+"ID : "+id +"\nName : "+ gname + "\nAge : "+
                     age ;
+
+
+
+
+
         }
 
         txt_display.setText(info);
+
+
+
+
         mydb.close();
     }
 

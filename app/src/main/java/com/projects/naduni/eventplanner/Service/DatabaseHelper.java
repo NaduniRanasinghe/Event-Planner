@@ -167,4 +167,6 @@ public void deleteEvents(int id, SQLiteDatabase db){
         Cursor cursor = db.rawQuery(sql, null);
         return cursor;
     }
+
+
 }
