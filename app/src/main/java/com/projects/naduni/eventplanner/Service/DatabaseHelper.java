@@ -21,7 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //common column names
     public static final String COL_1 ="ID";
-
+    //todolist columns
     public static final String COL_2 ="NAME";
     public static final String COL_3 ="NOTE";
 
@@ -91,6 +91,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
         else
             return true;
+
     }
 
     //insert Guest details
@@ -118,6 +119,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor res = db.rawQuery("select * from "+ TABLE_NAME ,null);
         return res;
     }
+
 
     //view guests data
     public Cursor getGuests(SQLiteDatabase db){
@@ -168,5 +170,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return list;
     }
 **/
+
 
 }
