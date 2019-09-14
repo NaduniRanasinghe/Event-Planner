@@ -43,35 +43,7 @@ public class CreateEvent extends Fragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.create_event);
 
-//        myDb = new DatabaseHelper(getActivity());
-//
-//        date_pick_button = (Button) findViewById(R.id.button_pick_date);
-//        event_add_button = (Button) findViewById(R.id.eventAddButton);
-//        date_view = (TextView) findViewById(R.id.edit_event_date);
-//
-//        editTextEventName = (EditText)findViewById(R.id.edit_event_name);
-//        editTextLocation = (EditText)findViewById(R.id.edit_event_location);
-//        editTextNote = (EditText)findViewById(R.id.edit_event_note);
-//
-//
-//        date_pick_button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Calendar c = Calendar.getInstance();
-//                year = c.get(Calendar.YEAR);
-//                month = c.get(Calendar.MONTH);
-//                day = c.get(Calendar.DAY_OF_MONTH);
-//
-//                DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), CreateEvent.this,
-//                        year, month, day);
-//                datePickerDialog.show();
-//            }
-//        });
-
-        //insert data to the Event table
-//        AddEventData();
     }
 
     @Override
@@ -80,7 +52,7 @@ public class CreateEvent extends Fragment implements
         myDb = new DatabaseHelper(getActivity());
 
         //Set title
-        getActivity().setTitle("Event Add");
+        getActivity().setTitle("Events");
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.create_event, container, false);

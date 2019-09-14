@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner5"
+        android:id="@+id/spinner_event"
         android:layout_width="0dp"
         android:layout_height="24dp"
         android:layout_marginStart="32dp"
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/name_textview" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/et_guestName"
         android:layout_width="wrap_content"
 
         android:layout_height="38dp"
@@ -82,17 +82,19 @@
         app:layout_constraintTop_toBottomOf="@+id/guestName_textView" />
 
     <Spinner
-        android:id="@+id/spinner6"
+        android:id="@+id/spinner_gender"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_age"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/gender_textview" />
+        app:layout_constraintStart_toEndOf="@+id/gender_textview"
+        app:layout_constraintTop_toBottomOf="@+id/et_guestName" />
 
 
     <TextView
@@ -110,20 +112,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gender_textview" />
 
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginLeft="57dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBaseline_toBaselineOf="@+id/age_textview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/age_textview" />
-
     <TextView
         android:id="@+id/email_textview"
         android:layout_width="wrap_content"
@@ -139,7 +127,7 @@
         app:layout_constraintTop_toBottomOf="@+id/age_textview" />
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/et_email"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="45dp"
@@ -167,7 +155,7 @@
         app:layout_constraintTop_toBottomOf="@+id/email_textview" />
 
     <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/et_notes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
@@ -179,6 +167,7 @@
         android:singleLine="false"
         app:layout_constraintBaseline_toBaselineOf="@+id/notes_textview"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toEndOf="@+id/notes_textview" />
 
     <Button
@@ -199,10 +188,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText10" />
+        app:layout_constraintTop_toBottomOf="@+id/et_notes" />
 
     <Spinner
-        android:id="@+id/spinner3"
+        android:id="@+id/spinner_events"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_alignStart="@+id/guestAddBtn"
@@ -233,5 +222,51 @@
         android:ems="10"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_age"
+        android:layout_width="227dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/et_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.649"
+        app:layout_constraintStart_toEndOf="@+id/age_textview"
+        android:entries="@array/age_arrays"/>
+
+    <TextView
+        android:id="@+id/Status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Status"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_status"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="393dp" />
+
+    <Spinner
+        android:id="@+id/spinner_status"
+        android:layout_width="228dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/add_guest_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_notes"
+        android:entries="@array/status_array"
+        />
 
 </android.support.constraint.ConstraintLayout>

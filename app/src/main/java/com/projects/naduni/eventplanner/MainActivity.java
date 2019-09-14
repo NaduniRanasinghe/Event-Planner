@@ -87,8 +87,9 @@ public class MainActivity extends AppCompatActivity
             ft.commit();
 
         } else if (id == R.id.nav_guests) {
-            ft.replace(R.id.content_frame, new GuestsView());
-            ft.commit();
+       ft.replace(R.id.content_frame, new GuestsView());
+           ft.commit();
+
 
         } else if (id == R.id.nav_todo) {
             ft.replace(R.id.content_frame, new TodoListView());
