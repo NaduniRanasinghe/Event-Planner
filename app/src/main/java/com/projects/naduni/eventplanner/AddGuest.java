@@ -1,5 +1,7 @@
 package com.projects.naduni.eventplanner;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -8,6 +10,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -18,11 +22,14 @@ import com.projects.naduni.eventplanner.Model.Event;
 import com.projects.naduni.eventplanner.Model.Guest;
 import com.projects.naduni.eventplanner.Service.DatabaseHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AddGuest extends Fragment{
 
     Button guest_add_button;
-    EditText editTextGuestName,editTextAge,editTextNote,editTextEmail;
-    Spinner spinnerGender, spinnerEvent;
+    EditText editTextGuestName,editTextNote,editTextEmail;
+    Spinner spinnerGender, spinnerEvent,spinnerAge,spinnerStatus;
 
 
     DatabaseHelper mydb;
@@ -36,18 +43,94 @@ public class AddGuest extends Fragment{
 
         editTextGuestName= (EditText) view.findViewById(R.id.et_guestName);
         guest_add_button = (Button) view.findViewById(R.id.add_guest_button);
-        //editTextAge= (EditText) view.findViewById(R.id.et_age);
+        spinnerAge= (Spinner) view.findViewById(R.id.spinner_age);
         editTextNote= (EditText) view.findViewById(R.id.et_notes);
         editTextEmail= (EditText) view.findViewById(R.id.et_email);
         spinnerGender =(Spinner) view.findViewById(R.id.spinner_gender);
         spinnerEvent =(Spinner) view.findViewById(R.id.spinner_event);
+        spinnerStatus =view.findViewById(R.id.spinner_status);
 
+
+
+
+        //Spinner Gender Values
+        String[] spinnerGenderValues ={"Female", "Male"};
+        ArrayAdapter<String> adapterGender = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1,spinnerGenderValues);
+        spinnerGender.setAdapter(adapterGender);
+        spinnerGender.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+            }
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+        //Spinner Age values
+        String[] spinnerValueHoldValue = {"Child", "Teenager", "Adult", "Senior"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1,spinnerValueHoldValue);
+        spinnerAge.setAdapter(adapter);
+        spinnerAge.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        //Spinner Event values
+        DatabaseHelper mydb = new DatabaseHelper(getActivity());
+        SQLiteDatabase db = mydb.getReadableDatabase();
+
+        Cursor cursor = mydb.getEvents(db);
+
+        List<String> spinnerEventValues =new ArrayList<>();
+        while(cursor.moveToNext())
+        {
+            String name = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_EVENT_NAME));
+            spinnerEventValues.add(name);
+        }
+        ArrayAdapter<String> Eventadapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1,spinnerEventValues);
+        spinnerEvent.setAdapter(Eventadapter);
+        spinnerEvent.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+        //Spinner status values
+        String[] spinnerStatusValues = {"Invited", "RSVP", "Not Invited", "Attending","Waiting RSVP","Not Invited"};
+        ArrayAdapter<String> statusadapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1,spinnerStatusValues);
+        spinnerStatus.setAdapter(statusadapter);
+        spinnerStatus.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         AddGuestData();
         return view;
     }
-
-
 
 
 
@@ -58,15 +141,16 @@ public class AddGuest extends Fragment{
             public void onClick(View view) {
                 try {
                     Guest guest = new Guest();
-                    guest.setEventName(spinnerEvent.toString());
+                    guest.setEventName(spinnerEvent.getSelectedItem().toString());
                     guest.setGuestName(editTextGuestName.getText().toString());
                     guest.setGuestEmail(editTextEmail.getText().toString());
-                    guest.setGuestGender(spinnerGender.toString());
-                    guest.setAge(editTextAge.getText().toString());
+                    guest.setGuestGender(spinnerGender.getSelectedItem().toString());
+                    guest.setAge(spinnerAge.getSelectedItem().toString());
                     guest.setNotesGuest(editTextNote.getText().toString());
+                    guest.setStatus(spinnerStatus.getSelectedItem().toString());
 
                     //Print data in the console
-                    System.out.println("Insert Guest Data = " + editTextGuestName.getText().toString() +","+ editTextEmail.getText().toString() +","+  editTextAge.getText().toString() +","+ editTextNote.getText().toString());
+                    System.out.println("Insert Guest Data = " + editTextGuestName.getText().toString() +","+ editTextEmail.getText().toString() +","+  spinnerAge.toString() +","+ editTextNote.getText().toString());
 
                     boolean isInserted = mydb.insertGuestData(guest);
                     if (isInserted = true)

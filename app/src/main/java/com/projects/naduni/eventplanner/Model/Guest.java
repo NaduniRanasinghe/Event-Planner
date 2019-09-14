@@ -10,11 +10,18 @@ public class Guest {
     public String eventName;
     public String notesGuest;
 
+    public String getStatus() {
+        return Status;
+    }
 
-//    public Guest(String name, String age){
-//        this.age = age;
-//        this.guestName = name;
-//    }
+    public void setStatus(String status) {
+        Status = status;
+    }
+
+    public String Status;
+
+
+
 
     public String getNotesGuest() {
         return notesGuest;

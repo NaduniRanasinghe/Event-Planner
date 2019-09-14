@@ -78,40 +78,57 @@ android:background="@drawable/gradient_list">
                 android:layout_marginTop="10dp"
                 android:textSize="18sp" />
 
-            <Button
-                android:id="@+id/view_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="38dp"
-                android:text="Button" />
-
 
         </LinearLayout>
     </ScrollView>
 
-<Button
-    android:id="@+id/editEventButton"
-    android:layout_width="wrap_content"
-    android:layout_height="45dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginRight="8dp"
-    android:text="Edit"
-    app:layout_constraintEnd_toStartOf="@+id/deleteEventButton"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
-<Button
-    android:id="@+id/deleteEventButton"
-    android:layout_width="wrap_content"
-    android:layout_height="45dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginEnd="64dp"
-    android:layout_marginRight="64dp"
-    android:text="Delete"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
+    <Button
+        android:id="@+id/deleteEventButton"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginBottom="8dp"
+        android:text="Delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/edit_event_button"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.508" />
+
+    <EditText
+        android:id="@+id/editText_deleteEvent"
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="Event ID"
+        android:inputType="textPersonName|number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/deleteEventButton"
+        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.516" />
+
+    <Button
+        android:id="@+id/edit_event_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Edit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
 </android.support.constraint.ConstraintLayout>

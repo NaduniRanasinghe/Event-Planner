@@ -38,6 +38,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_GUEST_GENDER= "GUESTGENDER";
     public static final String COL_GUEST_NOTE= "GUESTNOTE";
     public static final String COL_GUEST_EVENT= "GUESTEVENT";
+    public static final String COL_GUEST_STATUS= "GUESTSTATUS";
 
     public DatabaseHelper(Context context) {
         super(context,DATABASE_NAME,null,1);
@@ -49,7 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table "+ TABLE_NAME +"(ID INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT,NOTE TEXT)");
         db.execSQL("create table " + TABLE_EVENT +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,EVENTNAME TEXT,EVENTLOCATION TEXT,EVENTDATE TEXT,EVENTNOTE TEXT)");
-        db.execSQL("create table " + TABLE_GUEST +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,GUESTNAME TEXT,GUESTAGE TEXT,GUESTEMAIL TEXT,GUESTGENDER TEXT, GUESTNOTE TEXT, GUESTEVENT TEXT)");
+        db.execSQL("create table " + TABLE_GUEST +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,GUESTNAME TEXT,GUESTAGE TEXT,GUESTEMAIL TEXT,GUESTGENDER TEXT, GUESTNOTE TEXT, GUESTEVENT TEXT, GUESTSTATUS TEXT)");
     }
 
     @Override
@@ -105,6 +106,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_GUEST_GENDER,guest.getGuestGender());
         contentValues.put(COL_GUEST_NOTE,guest.getNotesGuest());
         contentValues.put(COL_GUEST_EVENT,guest.getEventName());
+        contentValues.put(COL_GUEST_STATUS,guest.getStatus());
 
         long result = db.insert(TABLE_GUEST,null ,contentValues);
         if (result == -1)
@@ -125,7 +127,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor getGuests(SQLiteDatabase db){
 
 
-       String[] projections = {COL_GUEST_NAME,COL_GUEST_AGE,COL_GUEST_EMAIL,COL_GUEST_GENDER,COL_GUEST_NOTE,COL_GUEST_EVENT};
+       String[] projections = {COL_1,COL_GUEST_NAME,COL_GUEST_AGE,COL_GUEST_EMAIL,COL_GUEST_GENDER,COL_GUEST_NOTE,COL_GUEST_EVENT,COL_GUEST_STATUS};
         Cursor cursor = db.query(TABLE_GUEST,projections,null,null,null,null,null);
         return cursor;
 
@@ -136,40 +138,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor getEvents(SQLiteDatabase db){
 
 
-        String[] projections = {COL_EVENT_NAME,COL_EVENT_DATE,COL_EVENT_LOCATION,COL_EVENT_NOTE};
+        String[] projections = {COL_1,COL_EVENT_NAME,COL_EVENT_DATE,COL_EVENT_LOCATION,COL_EVENT_NOTE};
         Cursor cursor = db.query(TABLE_EVENT,projections,null,null,null,null,null);
         return cursor;
 
     }
-//    public Cursor getData(){
-//        SQLiteDatabase db = this.getReadableDatabase();
-//        Cursor res = db.rawQuery("select * from "+ TABLE_GUEST ,null);
-//        return res;
-//    }
+//delete guests
+    public void deleteGuests(int id, SQLiteDatabase db){
 
-    /**
-    public List<String> getAllEvents() {
-        List<String> list = new ArrayList<String>();
 
-        // Select All Query
-        String selectQuery = "SELECT  EVENTNAME FROM " + TABLE_EVENT;
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);//selectQuery,selectedArguments
-
-        // looping through all rows and adding to list
-        if (cursor.moveToFirst()) {
-            do {
-                list.add(cursor.getString(1));//adding 2nd column data
-            } while (cursor.moveToNext());
-        }
-        // closing connection
-        cursor.close();
-        db.close();
-        // returning lables
-        return list;
+        String selection = COL_1+"="+id;
+        db.delete(TABLE_GUEST,selection,null);
     }
-**/
+
+//Delete Events by Inusha
+public void deleteEvents(int id, SQLiteDatabase db){
 
 
+    String selection = COL_1+"="+id;
+    db.delete(TABLE_EVENT,selection,null);
+
+}
+
+//search guests
+    public Cursor searchGuests(String name, SQLiteDatabase db){
+
+        String sql = "SELECT * FROM " + TABLE_GUEST + " WHERE " + COL_GUEST_NAME + " LIKE '%" + name + "%'";
+        Cursor cursor = db.rawQuery(sql, null);
+        return cursor;
+    }
 }

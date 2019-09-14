@@ -14,7 +14,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.projects.naduni.eventplanner.Service.DatabaseHelper;
 
@@ -27,6 +29,8 @@ public class EventFragment extends Fragment {
     View myView;
     Button creat_event_button;
     private TextView event_display;
+    EditText deleteId;
+    Button deleteEventButton;
 
     @Nullable
     @Override
@@ -38,6 +42,18 @@ public class EventFragment extends Fragment {
         myView = inflater.inflate(R.layout.fregment_event, container, false);
         creat_event_button = (Button) myView.findViewById(R.id.button_create_event);
         event_display = myView.findViewById(R.id.event_display);
+        deleteId = myView.findViewById(R.id.editText_deleteEvent);
+        deleteEventButton = myView.findViewById(R.id.deleteEventButton);
+
+        deleteEventButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteEvent();
+
+            }
+        });
+
+
 
         AnimationDrawable animationDrawable = (AnimationDrawable) myView.getBackground();
         animationDrawable.setEnterFadeDuration(2000);
@@ -56,7 +72,29 @@ public class EventFragment extends Fragment {
         return myView;
 
     }
+    //delete events
+    public void deleteEvent(){
 
+        DatabaseHelper db = new DatabaseHelper(getActivity());
+        SQLiteDatabase mydb = db.getWritableDatabase();
+
+        int id = Integer.parseInt(deleteId.getText().toString());
+
+        db.deleteEvents(id,mydb);
+
+        db.close();
+        deleteId.setText("");
+        openGuestFragment();
+        Toast.makeText(getActivity(),"Event deleted", Toast.LENGTH_SHORT).show();
+
+    }
+
+    public void openGuestFragment(){
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_frame, new EventFragment());
+        ft.commit();
+    }
 
     //retrieve guests from db
     private void readEvents(){
@@ -65,18 +103,20 @@ public class EventFragment extends Fragment {
 
         Cursor cursor = mydb.getEvents(db);
 
-        Button b1 = myView.findViewById(R.id.view_btn);
+        //Button b1 = myView.findViewById(R.id.view_btn);
 
         String info = " ";
 
         while(cursor.moveToNext())
         {
-
+            String id = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_1));
             String name = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_EVENT_NAME));
             String date = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_EVENT_DATE));
+            String location = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_EVENT_LOCATION));
+            String notes = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_EVENT_NOTE));
 
-            info =info + "\n\n"+ name +"\t\t\t\t"+
-                    date + b1;
+            info =info + "\n\n"+"Event ID : " +id +"\nName : " + name +"\nDate : "+ date+"/nLocation : " + location + "\nNotes : " + notes;
+
             event_display.setText(info);
         }
 

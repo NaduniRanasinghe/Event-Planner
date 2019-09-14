@@ -32,7 +32,8 @@
         android:layout_marginRight="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/name_textview"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:entries="@array/event_array"/>
 
 
     <TextView
@@ -94,7 +95,9 @@
         app:layout_constraintBottom_toTopOf="@+id/spinner_age"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/gender_textview"
-        app:layout_constraintTop_toBottomOf="@+id/et_guestName" />
+        app:layout_constraintTop_toBottomOf="@+id/et_guestName"
+
+        />
 
 
     <TextView
@@ -198,8 +201,6 @@
         android:layout_alignLeft="@+id/guestAddBtn"
         android:layout_alignParentTop="true"
         android:layout_marginTop="33dp"
-
-        android:entries="@array/event_array"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -235,8 +236,8 @@
         app:layout_constraintBottom_toTopOf="@+id/et_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.649"
-        app:layout_constraintStart_toEndOf="@+id/age_textview"
-        android:entries="@array/age_arrays"/>
+        app:layout_constraintStart_toEndOf="@+id/age_textview"/>
+        <!--android:entries="@array/age_arrays"/>-->
 
     <TextView
         android:id="@+id/Status"
@@ -244,6 +245,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="Status"
@@ -253,20 +255,15 @@
         app:layout_constraintEnd_toStartOf="@+id/spinner_status"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="393dp" />
+        app:layout_constraintTop_toBottomOf="@+id/notes_textview" />
 
     <Spinner
         android:id="@+id/spinner_status"
         android:layout_width="228dp"
         android:layout_height="31dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/add_guest_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_notes"
-        android:entries="@array/status_array"
-        />
+        app:layout_constraintBaseline_toBaselineOf="@+id/Status"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

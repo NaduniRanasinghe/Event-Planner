@@ -19,7 +19,7 @@ public class EventView extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        getActivity().setTitle("To-Do List");
+        getActivity().setTitle("Home");
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.eventview_activity, container, false);
         return view;
