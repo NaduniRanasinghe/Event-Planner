@@ -51,9 +51,9 @@ public class GuestsView extends Fragment  {
        spinnerEvent = view.findViewById(id.spinner_event_view);
        guestSearch = view.findViewById(id.budgetSearch);
        searchbtn = view.findViewById(id.budget_search);
-       total_display = view.findViewById(R.id.total_display);
-        female_display = view.findViewById(R.id.female_display);
-        male_display = view.findViewById(id.male_display);
+       total_display = view.findViewById(R.id.due_display);
+        female_display = view.findViewById(R.id.amount_display);
+        male_display = view.findViewById(id.paid_display);
 
         final String guestName = guestSearch.toString();
         searchbtn.setOnClickListener(new View.OnClickListener() {

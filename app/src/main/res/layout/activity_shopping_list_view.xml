@@ -1,311 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/guest_view_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_list">
 
 
+    <SearchView
+        android:id="@+id/ShoppingListSearch"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/shopping_search"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:background="#DAA520"
+        android:text="@string/search_button"
+        app:layout_constraintStart_toEndOf="@+id/ShoppingListSearch"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/shoppingadd"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/shopping_search"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add"
+        tools:ignore="contentDescription" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="@string/Event"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_event_shopping_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ShoppingListSearch" />
+
+    <Spinner
+        android:id="@+id/spinner_event_shopping_list"
+        android:layout_width="185dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/ShoppingListSearch" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="404dp"
+        android:layout_height="343dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginBottom="116dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".ShoppingListView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/shopping_display"
+                android:layout_width="368dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="serif" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/deleteShoppingButton"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/gradient_4_red"
+        android:text="Delete"
+        android:textStyle="bold"
+        android:textColor="@color/colorwhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/edit_shopping_button"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.086" />
+
+    <EditText
+        android:id="@+id/editText_deleteShopping"
+        android:layout_width="97dp"
         android:layout_height="40dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/pic1">
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:hint="Shopping List ID"
+        android:inputType="textPersonName|number"
+        app:layout_constraintEnd_toStartOf="@+id/deleteShoppingButton"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Shopping List"
-            android:textColor="#000000"
-            android:textSize="20dp"></TextView>
+    <Button
+        android:id="@+id/edit_shopping_button"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/gradient_5_green"
+        android:text="Edit"
+        android:textColor="@color/colorwhite"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.086" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="105dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:text=""
-            android:background="@drawable/image5"/>
-
-        <Button
-            android:id="@+id/shopping_list_add"
-            android:layout_width="105dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="5dp"
-            android:text="Add"
-            android:background="@drawable/pic5"/>
-
-
-    </LinearLayout>
-
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/pic2">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="SELECT EVENT"
-            android:textColor="#000000"
-            android:textSize="20dp"></TextView>
-
-        <Spinner
-            android:id="@+id/spinner1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:dropDownWidth="140dp"
-            android:entries="@array/country_arrays"
-            android:prompt="@string/country_prompt" />
-    </LinearLayout>
-
-
-
-    <TableRow
-        android:id="@+id/hr2"
-        android:layout_width="360dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginRight="15dp"
-        android:gravity="center"
-        android:layout_height="1dp"
-        android:layout_marginTop="100dp"
-        android:background="#444"></TableRow>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginTop="200dp"
-        android:background="@drawable/pic2">>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="9dp"
-            android:text="Item"
-            android:textColor="#000000"
-            android:textSize="10dp"></TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="Total Cost"
-            android:textColor="#000000"
-            android:textSize="10dp"></TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:text="Purchased"
-            android:textColor="#000000"
-            android:textSize="10dp"></TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:text="Edit"
-            android:textColor="#000000"
-            android:textSize="10dp"></TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:text="Delete"
-            android:textColor="#000000"
-            android:textSize="10dp"></TextView>
-
-    </LinearLayout>
-
-
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginTop="250dp"
-        android:background="@drawable/pic2">>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Ribbon"
-            android:textColor="#000000"
-            android:textSize="15dp"></TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="0"
-            android:textColor="#000000"
-            android:textSize="15dp"></TextView>
-
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="2dp"
-            android:layout_marginLeft="60dp"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:text="" />
-
-        <Button
-            android:id="@+id/edit_item"
-            android:layout_width="3dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:text=""
-            android:background="@drawable/edit1"/>
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="3dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/delete"
-            android:text="" />
-
-    </LinearLayout>
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginTop="300dp"
-        android:background="@drawable/pic2">>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Baloons"
-            android:textColor="#000000"
-            android:textSize="15dp"></TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="43dp"
-            android:text="0"
-            android:textColor="#000000"
-            android:textSize="15dp"></TextView>
-        <CheckBox
-            android:id="@+id/checkBox8"
-            android:layout_width="2dp"
-            android:layout_marginLeft="60dp"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:text="" />
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="3dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/edit1"
-            android:text="" />
-
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="3dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/delete"
-            android:text="" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginTop="350dp"
-        android:background="@drawable/pic2">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Candles"
-            android:textColor="#000000"
-            android:textSize="15dp"></TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="43dp"
-            android:text="0"
-            android:textColor="#000000"
-            android:textSize="15dp"></TextView>
-        <CheckBox
-            android:id="@+id/checkBox4"
-            android:layout_width="2dp"
-            android:layout_marginLeft="60dp"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:text="" />
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="3dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/edit1"
-            android:text="" />
-
-        <Button
-            android:id="@+id/button8"
-            android:layout_width="3dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/delete"
-            android:text="" />
-
-    </LinearLayout>
-
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_marginTop="500dp"
-        android:background="@drawable/pic2">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Total = 15000"
-            android:textColor="#000000"
-            android:textSize="15dp"></TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Cost = 2000"
-            android:textColor="#000000"
-            android:textSize="15dp"></TextView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Remaining = 13000"
-            android:textColor="#000000"
-            android:textSize="15dp"></TextView>
-
-
-    </LinearLayout>
-
-
-
-
-</RelativeLayout>
-
+</android.support.constraint.ConstraintLayout>
