@@ -46,7 +46,7 @@
             android:text="pasan kamburugamuwa" />
 
         <ImageButton
-            android:id="@+id/ibDeleteCustomer"
+            android:id="@+id/ibDeleteitem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -57,7 +57,7 @@
             android:id="@+id/ibUpdateCustomer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/ibDeleteCustomer"
+            android:layout_toLeftOf="@+id/ibDeleteitem"
             android:src="@android:drawable/ic_menu_edit"
             android:layout_marginRight="5dp"/>
     </RelativeLayout>

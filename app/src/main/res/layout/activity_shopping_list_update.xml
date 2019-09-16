@@ -14,14 +14,15 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:visibility="visible"
         android:layout_margin = "16dp"
-        android:background = "@drawable/pic1"/>
+        android:textColor="@color/colorwhite"
+        android:background = "@drawable/side_nav_bar"/>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="16dp"
-        android:background="@drawable/pic2"
+        android:background="@drawable/gradient_list"
         android:orientation="vertical"
 
         >
@@ -127,13 +128,10 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@drawable/pic5"
-            android:text="UPDATE" />
+            android:background="@drawable/side_nav_bar"
+            android:text="UPDATE"
+            android:textColor="@color/colorwhite"/>
 
     </LinearLayout>
 
 </LinearLayout>
-
-
-
-

@@ -229,6 +229,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="25dp"
@@ -290,7 +304,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:layout_marginTop="370dp">
+        android:layout_marginTop="380dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -347,7 +361,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:layout_marginTop="390dp">
+        android:layout_marginTop="410dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -407,13 +421,13 @@
         android:layout_marginRight="15dp"
         android:gravity="center"
         android:layout_height="1dp"
-        android:layout_marginTop="435dp"
+        android:layout_marginTop="460dp"
         android:background="#444"></TableRow>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:layout_marginTop="450dp">
+        android:layout_marginTop="480dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -447,7 +461,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:layout_marginTop="490dp">
+        android:layout_marginTop="520dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -507,7 +521,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:layout_marginTop="515dp">
+        android:layout_marginTop="545dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -563,7 +577,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:layout_marginTop="540dp">
+        android:layout_marginTop="570dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -620,7 +634,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:layout_marginTop="570dp">
+        android:layout_marginTop="600dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
