@@ -33,7 +33,6 @@ public class ShoppingListView extends Fragment {
     Button deletebtn;
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
@@ -54,6 +53,7 @@ public class ShoppingListView extends Fragment {
         deletebtn = view.findViewById(R.id.deleteShoppingButton);
 
 
+
         //set onclicklistener to add button
         btn_addshopinglist.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -63,6 +63,7 @@ public class ShoppingListView extends Fragment {
                 ft.commit();
 
             }});
+
 
 
         //set onclicklistener to DELETE button

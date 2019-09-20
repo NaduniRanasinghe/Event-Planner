@@ -21,49 +21,94 @@
         android:text="ADD NEW TASK"
         android:background="@drawable/rounded_border_button"/>
 
-
-
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp">
-        <TextView
-            android:id="@+id/tvUpdateDeleteTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:gravity="center"
-            android:paddingLeft="20dp"
-            android:paddingTop="15dp"
-            android:textSize="18dp"
-            android:textColor="@color/colorBlack"
-            android:text="pasan kamburugamuwa" />
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
 
-        <ImageButton
-            android:id="@+id/ibDeleteitem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:src="@android:drawable/ic_delete"
-            android:layout_marginRight="5dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-        <ImageButton
-            android:id="@+id/ibUpdateCustomer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/ibDeleteitem"
-            android:src="@android:drawable/ic_menu_edit"
-            android:layout_marginRight="5dp"/>
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/tvUpdateDeleteTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:paddingLeft="22dp"
+                    android:paddingTop="15dp"
+                    android:text="Go Shopping"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18dp" />
 
 
+                <ImageButton
+                    android:id="@+id/ibUpdateCustomer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="116dp"
+                    android:layout_toLeftOf="@+id/ibDeleteitem"
+                    android:src="@android:drawable/ic_menu_edit" />
 
+
+                <ImageButton
+                    android:id="@+id/ibDeleteitem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+
+                    android:layout_marginLeft="23dp"
+                    android:src="@android:drawable/ic_delete" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="412dp"
+                android:layout_height="78dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="58dp"
+                android:layout_marginEnd="-3dp"
+                android:layout_marginRight="-3dp">
+
+                <TextView
+                    android:id="@+id/tvUpdateDeleteTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="15dp"
+                    android:text="Campus Visit"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18dp" />
+
+
+
+                <ImageButton
+                    android:id="@+id/ibUpdateCustomer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="113dp"
+                    android:layout_toLeftOf="@+id/ibDeleteitem"
+                    android:src="@android:drawable/ic_menu_edit" />
+                <ImageButton
+                    android:id="@+id/ibDeleteitem2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="23dp"
+                    android:src="@android:drawable/ic_delete" />
+            </LinearLayout>
+        </RelativeLayout>
     </ScrollView>
 
 </LinearLayout>
