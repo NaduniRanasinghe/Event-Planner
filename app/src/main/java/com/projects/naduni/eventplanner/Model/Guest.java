@@ -9,6 +9,7 @@ public class Guest {
     public String guestGender;
     public String eventName;
     public String notesGuest;
+    public String Status;
 
     public String getStatus() {
         return Status;
@@ -17,10 +18,6 @@ public class Guest {
     public void setStatus(String status) {
         Status = status;
     }
-
-    public String Status;
-
-
 
 
     public String getNotesGuest() {

@@ -1,6 +1,5 @@
 package com.projects.naduni.eventplanner;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.projects.naduni.eventplanner.Model.Guest;
+import com.projects.naduni.eventplanner.Model.Todo;
 import com.projects.naduni.eventplanner.Service.DatabaseHelper;
 
 public class TodoListAdd extends Fragment {
@@ -31,7 +32,6 @@ public class TodoListAdd extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
         getActivity().setTitle("To-Do List Add");
         View view = inflater.inflate(R.layout.todolist_add, container, false);
         addTodos = (EditText)view.findViewById(R.id.addtodos);
@@ -42,23 +42,6 @@ public class TodoListAdd extends Fragment {
         myDb = new DatabaseHelper(getActivity());
         todoListBack = (Button) view.findViewById(R.id.todolistback);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                if(addTodos.getText().toString().matches("")){
-                    Toast.makeText(getActivity(),"You must add a task !", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    if(myDb.insertData(addTodos.getText().toString(),addNotes.getText().toString())){
-                        Toast.makeText(getActivity(),"Succesfully Added the item !", Toast.LENGTH_LONG ).show();
-                    }
-                    else{
-                        Toast.makeText(getActivity(), "Not added an item ", Toast.LENGTH_LONG ).show();
-                    }
-                }
-
-            }});
-
         todoListBack.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 FragmentManager fragmentManager = getFragmentManager();
@@ -67,7 +50,47 @@ public class TodoListAdd extends Fragment {
                 ft.commit();
 
             }});
+        addTodoItems();
         return view;
+    }
+    public void addTodoItems(){
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Todo todos = new Todo();
+                    todos.setTask(addTodos.getText().toString());
+                    todos.setNotes(addNotes.getText().toString());
+
+                    //Print data in the console
+                    System.out.println("Insert Guest Data = " + addTodos.getText().toString() +","+ addNotes.getText().toString() );
+
+                    boolean isInserted = myDb.insertTodoList(todos);
+                    if (isInserted = true) {
+                        Toast.makeText(getActivity(), "Data Inserted Successfully..", Toast.LENGTH_LONG).show();
+
+                        openEventFragment();
+                    }
+                    else
+                        Toast.makeText(getActivity(),"Data Inserted Error ..",Toast.LENGTH_LONG).show();
+
+
+                } catch (Exception e) {
+                    System.out.println("Error " + e.getMessage());
+                }
+
+            }
+        });
+
+
+    }
+
+    public void openEventFragment(){
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_frame, new TodoListView());
+        ft.commit();
     }
 
 

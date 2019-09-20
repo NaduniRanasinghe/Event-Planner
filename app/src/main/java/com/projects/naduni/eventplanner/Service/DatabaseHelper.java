@@ -8,22 +8,22 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.projects.naduni.eventplanner.Model.Event;
 import com.projects.naduni.eventplanner.Model.Guest;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.projects.naduni.eventplanner.Model.Todo;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME ="eventplanner.db";
-    public static final String TABLE_NAME ="todolist";
+    public static final String TABLE_TODO = "todotable";
     public static final String TABLE_EVENT = "events";
     public static final String TABLE_GUEST = "guests";
 
     //common column names
     public static final String COL_1 ="ID";
+
+
     //todolist columns
-    public static final String COL_2 ="NAME";
-    public static final String COL_3 ="NOTE";
+    public static final String COL_TASKS ="TASKS";
+    public static final String COL_NOTES ="NOTES";
 
     //Event table column names
     public static final String COL_EVENT_NAME = "EVENTNAME";
@@ -42,39 +42,68 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public DatabaseHelper(Context context) {
         super(context,DATABASE_NAME,null,1);
-//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
     }
 
-
+    //creating tables in here
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table "+ TABLE_NAME +"(ID INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT,NOTE TEXT)");
+        db.execSQL("create table "+ TABLE_TODO +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,TASKS TEXT, NOTES TEXT)");
         db.execSQL("create table " + TABLE_EVENT +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,EVENTNAME TEXT,EVENTLOCATION TEXT,EVENTDATE TEXT,EVENTNOTE TEXT)");
         db.execSQL("create table " + TABLE_GUEST +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,GUESTNAME TEXT,GUESTAGE TEXT,GUESTEMAIL TEXT,GUESTGENDER TEXT, GUESTNOTE TEXT, GUESTEVENT TEXT, GUESTSTATUS TEXT)");
     }
 
+    //if the table exits delete them
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_TODO);
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_EVENT);
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_GUEST);
         onCreate(db);
     }
 
-    public boolean insertData(String task, String note){
 
-        SQLiteDatabase db = this.getWritableDatabase();
+    //insert data to the Todolist
+    public boolean insertTodoList(Todo t){
+        System.out.println("Error InsertingData to todolist " + t.getTask());
+        SQLiteDatabase db = this.getReadableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2,task);
-        contentValues.put(COL_3,note);
-        long result = db.insert(TABLE_NAME,null, contentValues);
+        contentValues.put(COL_TASKS,t.getTask());
+        contentValues.put(COL_NOTES,t.getNotes());
+        long result = db.insert(TABLE_TODO,null,contentValues);
+
         if(result == -1){
             return false;
         }
         else{
             return true;
         }
+
     }
+
+    //view todolist data
+    public Cursor getTodoListData(SQLiteDatabase db){
+
+        String[] projections = {COL_1,COL_TASKS,COL_NOTES};
+        Cursor cursor = db.query(TABLE_TODO, projections,null,null,null,null,null);
+        return cursor;
+
+    }
+
+
+
+
+
+    //view guests data
+    public Cursor getGuests(SQLiteDatabase db){
+
+
+        String[] projections = {COL_1,COL_GUEST_NAME,COL_GUEST_AGE,COL_GUEST_EMAIL,COL_GUEST_GENDER,COL_GUEST_NOTE,COL_GUEST_EVENT,COL_GUEST_STATUS};
+        Cursor cursor = db.query(TABLE_GUEST,projections,null,null,null,null,null);
+        return cursor;
+
+    }
+
 
     //insert Event details
     public boolean insertEventData(Event event){
@@ -85,7 +114,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_EVENT_LOCATION,event.getLocation());
         contentValues.put(COL_EVENT_DATE,event.getDate());
         contentValues.put(COL_EVENT_NOTE,event.getNote());
-
 
         long result = db.insert(TABLE_EVENT,null ,contentValues);
         if (result == -1)
@@ -116,22 +144,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Cursor viewAllData(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from "+ TABLE_NAME ,null);
-        return res;
-    }
 
-
-    //view guests data
-    public Cursor getGuests(SQLiteDatabase db){
-
-
-       String[] projections = {COL_1,COL_GUEST_NAME,COL_GUEST_AGE,COL_GUEST_EMAIL,COL_GUEST_GENDER,COL_GUEST_NOTE,COL_GUEST_EVENT,COL_GUEST_STATUS};
-        Cursor cursor = db.query(TABLE_GUEST,projections,null,null,null,null,null);
-        return cursor;
-
-    }
 
 
     //view events data

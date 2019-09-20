@@ -89,7 +89,7 @@ public class TodoListView extends Fragment {
                 ft.commit();
             }});
         return view;
-        }
+    }
 
     public void showMessage(String title, String message){
         AlertDialog.Builder builder = new AlertDialog.Builder(this.getContext());
@@ -97,7 +97,6 @@ public class TodoListView extends Fragment {
         builder.setTitle(title);
         builder.setMessage(message);
         builder.show();
-
     }
 
 }

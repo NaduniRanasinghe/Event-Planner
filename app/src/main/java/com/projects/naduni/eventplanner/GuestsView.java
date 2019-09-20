@@ -1,7 +1,5 @@
 package com.projects.naduni.eventplanner;
 
-
-
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.AnimationDrawable;
@@ -68,11 +66,9 @@ public class GuestsView extends Fragment  {
            }
        });
 
-
-
         //Background animation
         AnimationDrawable animationDrawable = (AnimationDrawable) view.getBackground();
-       animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(4000);
         animationDrawable.start();
 
@@ -118,9 +114,6 @@ public class GuestsView extends Fragment  {
         //call retrieve function
         readGuests();
         return view;
-
-
-
     }
 
 
@@ -136,15 +129,11 @@ public class GuestsView extends Fragment  {
         if (deleteId == null) {
             Toast.makeText(getActivity(), "Enter valid id", Toast.LENGTH_LONG).show();
         }
-
-
         db.deleteGuests(id,mydb);
-
         db.close();
         deleteId.setText("");
         openGuestFragment();
         Toast.makeText(getActivity(),"Guest removed successfully", Toast.LENGTH_SHORT).show();
-
     }
 
     public void openGuestFragment(){
@@ -153,15 +142,14 @@ public class GuestsView extends Fragment  {
         ft.replace(R.id.content_frame, new GuestsView());
         ft.commit();
     }
+
+
     //retrieve guests from db
     private void readGuests(){
         DatabaseHelper mydb = new DatabaseHelper(getActivity());
         SQLiteDatabase db = mydb.getReadableDatabase();
-
         Cursor cursor = mydb.getGuests(db);
-
         String info = " ";
-
         while(cursor.moveToNext())
         {
             int id = cursor.getInt(cursor.getColumnIndex(DatabaseHelper.COL_1));
@@ -170,14 +158,14 @@ public class GuestsView extends Fragment  {
             String gender = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_GUEST_GENDER));
             String status = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_GUEST_STATUS));
             String email = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_GUEST_EMAIL));
-
             info = info + "\n\n"+"ID : "+id +"\nName : "+ name + "\nAge : "+
                     age + "\nGender :" + gender+"\nStatus : "+status +"\nEmail : "+ email;
         }
-
         txt_display.setText(info);
         mydb.close();
     }
+
+
 
     //search guests from db
     private void searchGuests(String name){
@@ -201,7 +189,6 @@ public class GuestsView extends Fragment  {
         txt_display.setText(info);
         mydb.close();
     }
-
 }
 
 

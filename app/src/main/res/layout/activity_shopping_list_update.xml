@@ -22,7 +22,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="16dp"
-        android:background="@drawable/gradient_list"
         android:orientation="vertical"
 
         >
@@ -126,10 +125,11 @@
             android:textSize="9dp" />
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="40dp"
             android:background="@drawable/side_nav_bar"
             android:text="UPDATE"
+            android:layout_marginLeft="135dp"
             android:textColor="@color/colorwhite"/>
 
     </LinearLayout>
