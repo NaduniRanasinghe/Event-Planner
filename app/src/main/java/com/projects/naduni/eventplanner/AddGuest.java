@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -39,7 +40,7 @@ public class AddGuest extends Fragment{
         View view = inflater.inflate(R.layout.add_guest, container, false);
 
         mydb = new DatabaseHelper(getActivity());
-
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
         editTextGuestName= (EditText) view.findViewById(R.id.et_guestName);
         guest_add_button = (Button) view.findViewById(R.id.add_guest_button);

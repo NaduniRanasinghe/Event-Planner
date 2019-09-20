@@ -9,9 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.projects.naduni.eventplanner.Model.Budget;
 import com.projects.naduni.eventplanner.Model.Event;
 import com.projects.naduni.eventplanner.Model.Guest;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.projects.naduni.eventplanner.Model.ShoppingListModel;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -20,6 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_EVENT = "events";
     public static final String TABLE_GUEST = "guests";
     public static final String TABLE_BUDGET ="budget";
+    public static final String TABLE_SHOPPING ="shopping";
 
     //common column names
     public static final String COL_1 ="ID";
@@ -49,6 +48,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_BUDGET_PAID = "PAID";
     public static final String COL_BUDGET_NOTE = "NOTES";
 
+    //SHOPPING Table column names
+    public static final String COL_SHOPPING_ITEM = "ITEMNAME";
+    public static final String COL_SHOPPING_EVENT = "SHOPPINGEVENT";
+    public static final String COL_SHOPPING_PURCHASED = "PURCHASED";
+    public static final String COL_PRICE = "PRICE";
+    public static final String COL_UNITS = "UNITS";
+    public static final String COL_QUANTITYMODE = "QUANTITYMODE";
+    public static final String COL_NOTES = "NOTES";
+
+
 
     public DatabaseHelper(Context context) {
         super(context,DATABASE_NAME,null,1);
@@ -62,6 +71,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("create table "+ TABLE_BUDGET +"(ID INTEGER PRIMARY KEY AUTOINCREMENT,BUDGETNAME TEXT,BUDGETEVENT TEXT, AMOUNT INTEGER,PAID INTEGER, NOTES TEXT)");
         db.execSQL("create table " + TABLE_EVENT +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,EVENTNAME TEXT,EVENTLOCATION TEXT,EVENTDATE TEXT,EVENTNOTE TEXT)");
         db.execSQL("create table " + TABLE_GUEST +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,GUESTNAME TEXT,GUESTAGE TEXT,GUESTEMAIL TEXT,GUESTGENDER TEXT, GUESTNOTE TEXT, GUESTEVENT TEXT, GUESTSTATUS TEXT)");
+        db.execSQL("create table " + TABLE_SHOPPING +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,ITEMNAME TEXT,SHOPPINGEVENT TEXT,PURCHASED TEXT,PRICE TEXT, UNITS TEXT, QUANTITYMODE TEXT, NOTES TEXT)");
     }
 
     @Override
@@ -70,6 +80,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_EVENT);
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_GUEST);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_BUDGET);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SHOPPING);
         onCreate(db);
     }
 
@@ -214,6 +225,47 @@ public void deleteEvents(int id, SQLiteDatabase db){
 }
 
 
+    //insert SHOPPING details
+    public boolean insertShoppingData(ShoppingListModel list){
+        System.out.println("Error insertEventData " + list.getItem());
+        SQLiteDatabase db = this.getReadableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_SHOPPING_ITEM,list.getItem());
+        contentValues.put(COL_SHOPPING_EVENT,list.getEvent());
+        contentValues.put(COL_SHOPPING_PURCHASED,list.getPurchased());
+        contentValues.put(COL_PRICE,list.getPrice());
+        contentValues.put(COL_UNITS,list.getUnits());
+        contentValues.put(COL_QUANTITYMODE,list.getQuantityMode());
+        contentValues.put(COL_NOTES,list.getNotes());
 
+
+
+
+        long result = db.insert(TABLE_SHOPPING,null ,contentValues);
+        if (result == -1)
+            return false;
+        else
+            return true;
+
+    }
+
+    //view shopping items data
+    public Cursor getShoppingItems(SQLiteDatabase db){
+
+
+        String[] projections = {COL_1,COL_SHOPPING_ITEM,COL_SHOPPING_EVENT,COL_SHOPPING_PURCHASED,COL_PRICE,COL_UNITS,COL_QUANTITYMODE,COL_NOTES};
+        Cursor cursor = db.query(TABLE_SHOPPING,projections,null,null,null,null,null);
+        return cursor;
+
+    }
+
+    //DELETE SHOPPING ITEM
+    public void deleteShoppingItem(int id, SQLiteDatabase db){
+
+
+        String selection = COL_1+"="+id;
+        db.delete(TABLE_SHOPPING,selection,null);
+
+    }
 
 }
