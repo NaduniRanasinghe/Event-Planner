@@ -50,29 +50,30 @@
         android:id="@+id/textView"
         android:layout_width="60dp"
         android:layout_height="25dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginLeft="116dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:text="@string/Event"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/spinner_event"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_event_budget_list"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/budgetSearch" />
 
     <Spinner
-        android:id="@+id/spinner_event_view"
-        android:layout_width="100dp"
+        android:id="@+id/spinner_event_budget_list"
+        android:layout_width="185dp"
         android:layout_height="25dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/budgetSearch" />
 
@@ -81,19 +82,18 @@
         android:id="@+id/scrollView2"
         android:layout_width="404dp"
         android:layout_height="343dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="135dp"
         android:layout_marginBottom="116dp"
-        android:background="@drawable/gradient_4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:context=".GuestFragment">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".BudgetList">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -192,7 +192,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editText_deletebudget" />
 
         <TextView
-            android:id="@+id/female_display"
+            android:id="@+id/amount_display"
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:layout_marginStart="8dp"
@@ -223,12 +223,12 @@
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/male_display"
-            app:layout_constraintStart_toEndOf="@+id/female_display"
+            app:layout_constraintEnd_toStartOf="@+id/paid_display"
+            app:layout_constraintStart_toEndOf="@+id/amount_display"
             app:layout_constraintTop_toBottomOf="@+id/deleteBudgetButton" />
 
         <TextView
-            android:id="@+id/male_display"
+            android:id="@+id/paid_display"
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:layout_marginTop="8dp"
@@ -257,11 +257,11 @@
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/total_display"
+            app:layout_constraintEnd_toStartOf="@+id/due_display"
             app:layout_constraintTop_toBottomOf="@+id/edit_budget_button" />
 
         <TextView
-            android:id="@+id/total_display"
+            android:id="@+id/due_display"
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:layout_marginTop="8dp"

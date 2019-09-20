@@ -50,16 +50,16 @@
         android:id="@+id/textView"
         android:layout_width="60dp"
         android:layout_height="25dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:text="@string/Event"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/spinner_event"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_event_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/budgetSearch" />
 
@@ -68,8 +68,8 @@
         android:layout_width="60dp"
         android:layout_height="025dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:text="@string/status"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
@@ -79,11 +79,11 @@
 
     <Spinner
         android:id="@+id/spinner_event_view"
-        android:layout_width="100dp"
+        android:layout_width="122dp"
         android:layout_height="25dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
         app:layout_constraintEnd_toStartOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/budgetSearch" />
 
@@ -92,8 +92,8 @@
         android:layout_width="100dp"
         android:layout_height="25dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:entries="@array/status_array"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/budgetadd" />
@@ -105,7 +105,7 @@
         android:layout_height="329dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/gradient_4"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
@@ -214,7 +214,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editText_deletebudget" />
 
         <TextView
-            android:id="@+id/female_display"
+            android:id="@+id/amount_display"
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:layout_marginStart="8dp"
@@ -245,12 +245,12 @@
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/male_display"
-            app:layout_constraintStart_toEndOf="@+id/female_display"
+            app:layout_constraintEnd_toStartOf="@+id/paid_display"
+            app:layout_constraintStart_toEndOf="@+id/amount_display"
             app:layout_constraintTop_toBottomOf="@+id/deleteBudgetButton" />
 
         <TextView
-            android:id="@+id/male_display"
+            android:id="@+id/paid_display"
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:layout_marginTop="8dp"
@@ -279,18 +279,18 @@
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/total_display"
+            app:layout_constraintEnd_toStartOf="@+id/due_display"
             app:layout_constraintTop_toBottomOf="@+id/edit_budget_button" />
 
         <TextView
-            android:id="@+id/total_display"
+            android:id="@+id/due_display"
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:text="20"
+            android:text="0"
             android:textAlignment="center"
             android:textColor="@color/colorwhite"
             android:textStyle="bold"

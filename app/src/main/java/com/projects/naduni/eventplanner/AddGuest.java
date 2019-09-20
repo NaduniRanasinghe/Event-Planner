@@ -132,9 +132,6 @@ public class AddGuest extends Fragment{
         return view;
     }
 
-
-
-
     public void AddGuestData(){
         guest_add_button.setOnClickListener(new View.OnClickListener() {
             @Override

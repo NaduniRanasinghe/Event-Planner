@@ -103,8 +103,6 @@ public class EventFragment extends Fragment {
 
         Cursor cursor = mydb.getEvents(db);
 
-        //Button b1 = myView.findViewById(R.id.view_btn);
-
         String info = " ";
 
         while(cursor.moveToNext())
@@ -115,7 +113,7 @@ public class EventFragment extends Fragment {
             String location = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_EVENT_LOCATION));
             String notes = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COL_EVENT_NOTE));
 
-            info =info + "\n\n"+"Event ID : " +id +"\nName : " + name +"\nDate : "+ date+"/nLocation : " + location + "\nNotes : " + notes;
+            info =info + "\n\n\n"+"Event ID : " +id +"\nName : " + name +"\nDate : "+ date+"\nLocation : " + location + "\nNotes : " + notes;
 
             event_display.setText(info);
         }

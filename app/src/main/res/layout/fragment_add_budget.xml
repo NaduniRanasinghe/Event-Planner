@@ -26,7 +26,7 @@
         app:layout_constraintVertical_bias="0.184" />
 
     <EditText
-        android:id="@+id/edit_event_name"
+        android:id="@+id/edit_budget_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -81,7 +81,7 @@
         app:layout_constraintVertical_bias="0.756" />
 
     <EditText
-        android:id="@+id/edit_event_note"
+        android:id="@+id/edit_budget_note"
         android:layout_width="0dp"
         android:layout_height="57dp"
         android:layout_marginStart="16dp"
@@ -98,7 +98,7 @@
         app:layout_constraintVertical_bias="0.879" />
 
     <Button
-        android:id="@+id/eventAddButton"
+        android:id="@+id/budgetAddButton"
         android:layout_width="93dp"
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
@@ -120,7 +120,7 @@
         app:layout_constraintVertical_bias="0.966" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editText_budget_amount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -154,7 +154,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinner_event_budget"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -182,10 +182,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_budget_amount" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editText_paid_amount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
