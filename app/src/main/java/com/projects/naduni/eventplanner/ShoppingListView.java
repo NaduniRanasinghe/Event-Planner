@@ -26,7 +26,7 @@ public class ShoppingListView extends Fragment {
 
     ImageButton btn_addshopinglist;
     Spinner shoppingevents;
-
+    Button shoppinglistButton;
 
 
     @Override
@@ -44,7 +44,7 @@ public class ShoppingListView extends Fragment {
 
         btn_addshopinglist =view.findViewById(R.id.shoppingadd);
         shoppingevents = view.findViewById(R.id.spinner_event_shopping_list);
-       // btn_editItems = (Button)view.findViewById(R.id.edit_item);
+        shoppinglistButton = (Button)view.findViewById(R.id.edit_shopping_button);
 
         btn_addshopinglist.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -54,6 +54,16 @@ public class ShoppingListView extends Fragment {
                 ft.commit();
 
             }});
+        shoppinglistButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                ft.replace(R.id.content_frame, new ShoppingListUpdate());
+                ft.commit();
+
+            }});
+
+
         DatabaseHelper mydb = new DatabaseHelper(getActivity());
         SQLiteDatabase db = mydb.getReadableDatabase();
 
