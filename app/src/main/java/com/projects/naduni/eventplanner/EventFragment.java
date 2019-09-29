@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.AnimationDrawable;
 import android.support.v4.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
@@ -40,9 +39,9 @@ public class EventFragment extends Fragment {
         getActivity().setTitle("Events");
 
         myView = inflater.inflate(R.layout.fregment_event, container, false);
-        creat_event_button = (Button) myView.findViewById(R.id.button_create_event);
-        event_display = myView.findViewById(R.id.event_display);
-        deleteId = myView.findViewById(R.id.editText_deleteEvent);
+        creat_event_button = (Button) myView.findViewById(R.id.button_addTodos);
+        event_display = myView.findViewById(R.id.todolist_display);
+        deleteId = myView.findViewById(R.id.editText_deleteshoppinglist);
         deleteEventButton = myView.findViewById(R.id.deleteEventButton);
 
         deleteEventButton.setOnClickListener(new View.OnClickListener() {

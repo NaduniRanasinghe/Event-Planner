@@ -32,7 +32,7 @@ android:background="@drawable/gradient_list">
 
 
     <Button
-        android:id="@+id/button_create_event"
+        android:id="@+id/button_addTodos"
         android:layout_width="73dp"
         android:layout_height="34dp"
         android:layout_alignParentTop="true"
@@ -74,7 +74,7 @@ android:background="@drawable/gradient_list">
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/event_display"
+                android:id="@+id/todolist_display"
                 android:layout_width="209dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -99,12 +99,12 @@ android:background="@drawable/gradient_list">
         android:text="Delete"
         android:background="@drawable/side_nav_bar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/edit_event_button"
+        app:layout_constraintEnd_toStartOf="@+id/edit_todo_button"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2"
         app:layout_constraintVertical_bias="0.508" />
 
     <EditText
-        android:id="@+id/editText_deleteEvent"
+        android:id="@+id/editText_deleteshoppinglist"
         android:layout_width="104dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -124,7 +124,7 @@ android:background="@drawable/gradient_list">
         app:layout_constraintVertical_bias="0.516" />
 
     <Button
-        android:id="@+id/edit_event_button"
+        android:id="@+id/edit_todo_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

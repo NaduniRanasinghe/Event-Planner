@@ -119,11 +119,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
 
     }
-
-
-
-
-
+    //delete todolist
+    public void deleteTodolist(int id, SQLiteDatabase db){
+        String selection = COL_1+"="+id;
+        db.delete(TABLE_TODO,selection,null);
+    }
 
 
 
